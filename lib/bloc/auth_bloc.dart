@@ -13,11 +13,7 @@ class AuthBloc extends Cubit<AuthNavigationState> {
   }
 
   void setAuthorized(bool isAuthorized) {
-    if (isAuthorized) {
-      emit(AuthNavigationState.authorized());
-    } else {
-      emit(AuthNavigationState.unAuthorized());
-    }
+    emit(isAuthorized ? AuthNavigationState.authorized() : AuthNavigationState.unAuthorized());
   }
 
 }
