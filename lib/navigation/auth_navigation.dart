@@ -13,9 +13,9 @@ class AuthNavigation extends StatefulWidget {
   final WidgetBuilder unAuthorizedBuilder; //Navigator[Login, Register, ForgotPass, OTP]
 
   AuthNavigation({
-    @required this.splashScreen,
-    @required this.authorizedBuilder,
-    @required this.unAuthorizedBuilder,
+    required this.splashScreen,
+    required this.authorizedBuilder,
+    required this.unAuthorizedBuilder,
   });
 
   @override
@@ -33,9 +33,9 @@ class _AuthNavigationState extends State<AuthNavigation> {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<AuthBloc, AuthNavigationState>(
-      cubit: context.bloc<AuthBloc>(),
+      bloc: context.read<AuthBloc>(),
       builder: (context, state) {
-        if (state == null || state is LoadConfig) {
+        if (state is LoadConfig) {
           return widget.splashScreen;
         } else {
           if (state is Authorized) {
@@ -46,7 +46,7 @@ class _AuthNavigationState extends State<AuthNavigation> {
         }
       },
       buildWhen: (stateOld, stateCurrent) {
-        return stateOld?.runtimeType != stateCurrent?.runtimeType;
+        return stateOld.runtimeType != stateCurrent.runtimeType;
       },
     );
   }

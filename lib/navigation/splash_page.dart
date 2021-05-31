@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 
 import 'auth_navigation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'dart:developer' as developer;
 
 abstract class SplashPage extends StatefulWidget {
   static const TAG = 'SplashPage';
@@ -22,7 +21,7 @@ abstract class SplashPageState<W extends SplashPage> extends State<W> {
   void didChangeDependencies() {
     super.didChangeDependencies();
     widget.initializeApp(context).then((state) {
-      context?.bloc<AuthBloc>()?.setState(state);
+      context.read<AuthBloc>().setState(state);
     });
   }
 
