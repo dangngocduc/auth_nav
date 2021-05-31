@@ -21,7 +21,9 @@ abstract class SplashPageState<W extends SplashPage> extends State<W> {
   void didChangeDependencies() {
     super.didChangeDependencies();
     widget.initializeApp(context).then((state) {
-      context.read<AuthBloc>().setState(state);
+      if(mounted) {
+        context.read<AuthBloc>().setState(state);
+      }
     });
   }
 

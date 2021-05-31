@@ -1,6 +1,6 @@
 name: auth_nav
 description: Library support navgiation for authorization flow on flutter.
-version: 2.0.0
+version: 2.0.1
 homepage: https://github.com/dangngocduc/auth_nav
 repository: https://github.com/dangngocduc/auth_nav
 issue_tracker: https://github.com/dangngocduc/auth_nav/issues
