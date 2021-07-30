@@ -8,6 +8,10 @@ abstract class  AuthNavigationState {
   factory AuthNavigationState.loadConfig() {
     return LoadConfig();
   }
+
+  factory AuthNavigationState.maintenance() {
+    return Maintenance();
+  }
 }
 
 class Authorized implements AuthNavigationState {}
@@ -15,3 +19,5 @@ class Authorized implements AuthNavigationState {}
 class UnAuthorized implements AuthNavigationState {}
 
 class LoadConfig implements AuthNavigationState {}
+
+class Maintenance implements AuthNavigationState {}

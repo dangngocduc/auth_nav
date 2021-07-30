@@ -6,3 +6,5 @@
         upgrade Dart SDK constraints to >=2.12.0-0 <3.0.0
         
 # 2.0.1 FIXBUG: show error when change state authentication
+
+# 2.0.2 FEAT: add maintenance state for app

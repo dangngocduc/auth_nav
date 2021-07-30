@@ -1,5 +1,5 @@
 import 'dart:developer' as developer;
-import 'package:auth_nav/bloc/auth_bloc.dart';
+import 'package:auth_nav/bloc/auth_navigation_bloc.dart';
 import 'package:flutter/material.dart';
 
 import 'auth_navigation.dart';
@@ -22,7 +22,7 @@ abstract class SplashPageState<W extends SplashPage> extends State<W> {
     super.didChangeDependencies();
     widget.initializeApp(context).then((state) {
       if(mounted) {
-        context.read<AuthBloc>().setState(state);
+        context.read<AuthNavigationBloc>().setState(state);
       }
     });
   }

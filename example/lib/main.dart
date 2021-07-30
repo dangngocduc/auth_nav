@@ -1,4 +1,4 @@
-import 'package:auth_nav/bloc/auth_bloc.dart';
+import 'package:auth_nav/bloc/auth_navigation_bloc.dart';
 import 'package:auth_nav/bloc/auth_navigation_state.dart';
 import 'package:auth_nav/navigation/auth_navigation.dart';
 import 'package:example/pages/splash_app_page.dart';
@@ -9,7 +9,7 @@ import 'package:example/pages/login_page.dart';
 
 void main() {
   runApp(BlocProvider(
-      create: (context) => AuthBloc(),
+      create: (context) => AuthNavigationBloc(),
       child: MyApp(),
   ));
 }
