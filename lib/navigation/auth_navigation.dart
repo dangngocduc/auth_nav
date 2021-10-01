@@ -12,11 +12,14 @@ class AuthNavigation extends StatefulWidget {
   final WidgetBuilder authorizedBuilder; //Home -> .. ->
   final WidgetBuilder unAuthorizedBuilder; //Navigator[Login, Register, ForgotPass, OTP]
   final WidgetBuilder? maintenanceBuilder;
+  final WidgetBuilder? guestBuilder; //Home -> .. ->
+
 
   AuthNavigation({
     required this.splashScreen,
     required this.authorizedBuilder,
     required this.unAuthorizedBuilder,
+    this.guestBuilder,
     this.maintenanceBuilder
   });
 
@@ -46,6 +49,10 @@ class _AuthNavigationState extends State<AuthNavigation> {
         } else if (state is Maintenance) {
           if (widget.maintenanceBuilder != null) {
             return widget.maintenanceBuilder!(context);
+          }
+        } else if (state is GuestMode) {
+          if (widget.guestBuilder != null) {
+            return widget.guestBuilder!(context);
           }
         }
         return Container();

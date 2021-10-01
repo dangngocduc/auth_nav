@@ -19,7 +19,7 @@ class _LoginPageState extends State<LoginPage> {
         child: FlatButton(
           child: Text('Pass Login Success'),
           onPressed: () {
-            context.bloc<AuthNavigationBloc>().setAuthorized(true);
+            context.read<AuthNavigationBloc>().setAuthorized(true);
           },
         ),
       ),
