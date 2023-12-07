@@ -60,7 +60,7 @@ class _AuthNavigationState extends State<AuthNavigation> {
             return widget.guestBuilder!(context);
           }
         } else if (state is ErrorStart) {
-          if (widget.guestBuilder != null) {
+          if (widget.errorBuilder != null) {
             return widget.errorBuilder!(context, state.error, null);
           }
         }
