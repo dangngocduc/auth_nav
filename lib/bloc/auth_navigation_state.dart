@@ -1,4 +1,4 @@
-abstract class  AuthNavigationState {
+abstract class AuthNavigationState {
   factory AuthNavigationState.authorized() {
     return Authorized();
   }
@@ -16,6 +16,10 @@ abstract class  AuthNavigationState {
   factory AuthNavigationState.guestMode() {
     return GuestMode();
   }
+
+  factory AuthNavigationState.errorStart(Object? error) {
+    return ErrorStart(error: error);
+  }
 }
 
 class Authorized implements AuthNavigationState {}
@@ -27,3 +31,9 @@ class LoadConfig implements AuthNavigationState {}
 class Maintenance implements AuthNavigationState {}
 
 class GuestMode implements AuthNavigationState {}
+
+class ErrorStart implements AuthNavigationState {
+  final Object? error;
+
+  ErrorStart({required this.error});
+}
