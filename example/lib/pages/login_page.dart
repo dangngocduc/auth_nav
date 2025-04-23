@@ -16,7 +16,7 @@ class _LoginPageState extends State<LoginPage> {
         title: Text('Login Page'),
       ),
       body: Center(
-        child: FlatButton(
+        child: ElevatedButton(
           child: Text('Pass Login Success'),
           onPressed: () {
             context.read<AuthNavigationBloc>().setAuthorized(true);

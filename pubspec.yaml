@@ -6,7 +6,7 @@ repository: https://github.com/dangngocduc/auth_nav
 issue_tracker: https://github.com/dangngocduc/auth_nav/issues
 documentation: https://github.com/dangngocduc/auth_nav
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  sdk: ">=3.5.0 <4.0.0"
 
 dependencies:
   flutter:
